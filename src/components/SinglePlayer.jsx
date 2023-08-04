@@ -1,5 +1,5 @@
-import React from 'react'
-import NavBar from './NavBar'
+import React from 'react';
+import NavBar from './NavBar';
 
 const SinglePlayer = () => {
   return (
@@ -7,7 +7,7 @@ const SinglePlayer = () => {
       <NavBar />
       <div>SinglePlayer</div>
     </>
-  )
-}
+  );
+};
 
-export default SinglePlayer
+export default SinglePlayer;
