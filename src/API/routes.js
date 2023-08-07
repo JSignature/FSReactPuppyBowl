@@ -24,4 +24,17 @@ const getSinglePlayer = async id => {
   }
 }
 
-export { getAllPlayers, getSinglePlayer }
+const deletePlayer = async id => {
+  try {
+    const resp = await fetch(`${baseAPI}/players/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { getAllPlayers, getSinglePlayer, deletePlayer }
