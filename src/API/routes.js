@@ -37,4 +37,19 @@ const deletePlayer = async id => {
   }
 }
 
-export { getAllPlayers, getSinglePlayer, deletePlayer }
+const createPlayer = async data => {
+  try {
+    const req = await fetch(`${baseAPI}/players`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    console.log(req)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { getAllPlayers, getSinglePlayer, deletePlayer, createPlayer }

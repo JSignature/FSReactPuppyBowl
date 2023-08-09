@@ -25,6 +25,7 @@ const SinglePlayer = () => {
 
   return (
     <>
+      <h1>Work in progress, MVP ONLY</h1>
       <NavBar />
 
       <div>

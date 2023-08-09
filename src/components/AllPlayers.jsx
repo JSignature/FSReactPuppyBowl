@@ -1,9 +1,12 @@
 import { getAllPlayers } from '../API/routes'
+import CreatePlayer from './CreatePlayer'
 import NavBar from './NavBar'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const AllPlayers = () => {
+  let location = useLocation()
+
   useEffect(() => {
     async function fetchData() {
       const data = await getAllPlayers()
@@ -11,7 +14,7 @@ const AllPlayers = () => {
       setPlayers(data)
     }
     fetchData()
-  }, [])
+  }, [location])
 
   const [players, setPlayers] = useState([])
   const [searchValue, setSearchValue] = useState('')
@@ -29,6 +32,7 @@ const AllPlayers = () => {
 
   return (
     <>
+      <h1>Work in progress, MVP ONLY</h1>
       <NavBar />
       <div>
         <label for="site-search">Search puppies:</label>
@@ -40,7 +44,9 @@ const AllPlayers = () => {
             setSearchValue(e.target.value)
           }}
         />
+        {/* <CreatePlayer /> */}
       </div>
+
       <div>
         {searchValue ? (
           <div>
